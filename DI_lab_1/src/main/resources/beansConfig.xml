@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="
+       http://www.springframework.org/schema/beans
+       https://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       https://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/aop
+       https://www.springframework.org/schema/aop/spring-aop.xsd">
+
+	<!-- Bean definitions -->
+	<bean id="math" class="com.site.DI_lab_1.Subject">
+		<property name="subjectName" value="Maths"></property>
+	</bean>
+	<bean id="history" class="com.site.DI_lab_1.Subject">
+		<property name="subjectName" value="History"></property>
+	</bean>
+	<bean id="stdAddr" class="com.site.DI_lab_1.Address">
+		<property name="city" value="Addis" />
+		<property name="country" value="Ethiopia" />
+	</bean>
+	<bean id="student" class="com.site.DI_lab_1.Student">
+		<property name="firstName" value="John" />
+		<property name="lastName" value="Doe" />
+		<property name="address" ref="stdAddr" />
+		<property name="subjects">
+			<list>
+				<ref bean="math" />
+				<ref bean="history" />
+			</list>
+		</property>
+	</bean>
+</beans>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="
+       http://www.springframework.org/schema/beans
+       https://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       https://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/aop
+       https://www.springframework.org/schema/aop/spring-aop.xsd">
+
+	<!-- Bean definitions -->
+	<bean id="math" class="com.site.ConstructorBasedDI.Subject">
+		<constructor-arg value="Maths" />
+	</bean>
+	<bean id="history" class="com.site.ConstructorBasedDI.Subject">
+		<constructor-arg value="History" />
+	</bean>
+	<bean id="logic" class="com.site.ConstructorBasedDI.Subject">
+		<constructor-arg value="Logic" />
+	</bean>
+	<bean id="student" class="com.site.ConstructorBasedDI.Student">
+		<constructor-arg name="firstName" value="John" />
+		<constructor-arg name="lastName" value="Doe" />
+		<constructor-arg>
+			<list>
+				<ref bean="math" />
+				<ref bean="history" />
+				<ref bean="logic" />
+			</list>
+		</constructor-arg>
+	</bean>
+</beans>
