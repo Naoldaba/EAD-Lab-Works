@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Task</title>
+</head>
+<body>
+    <h2>Add a New Task</h2>
+    <form action="/registerTask" method="post">
+        <label for="description">Description:</label><br>
+        <input type="text" id="description" name="description" required><br><br>
+
+        <label for="status">Status:</label><br>
+        <select id="status" name="status">
+            <option value="Pending">Pending</option>
+            <option value="Completed">Completed</option>
+        </select><br><br>
+
+        <label for="due_date">Due Date:</label><br>
+        <input type="date" id="due_date" name="due_date"><br><br>
+
+        <input type="submit" value="Add Task">
+    </form>
+    <br>
+    <a href="index.html">Back to Home</a>
+</body>
+</html>
